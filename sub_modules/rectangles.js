@@ -74,6 +74,18 @@ class Rectangle {
     }
 }
 
+function createR1(origin, base, height) {
+    let rectangle = new Rectangle(origin, base, height)
+    module.exports.r1 = rectangle
+    return rectangle
+}
+
+function createR2(origin, base, height) {
+    let rectangle = new Rectangle(origin, base, height)
+    module.exports.r2 = rectangle
+    return rectangle
+}
+
 // export rectangles module
 module.exports = {
 
@@ -81,17 +93,16 @@ module.exports = {
 
         // create rectangle 1
         server.post('/r1', function (req, res) {
-            let rectangle = new Rectangle(req.body.origin, req.body.base, req.body.height)
-            module.exports.r1 = rectangle
-            res.send(rectangle)
+            res.send(createR1(req.body.origin, req.body.base, req.body.height))
         })
 
         // create rectangle 2
         server.post('/r2', function (req, res) {
-            let rectangle = new Rectangle(req.body.origin, req.body.base, req.body.height)
-            module.exports.r2 = rectangle
-            res.send(rectangle)
+            res.send(createR2(req.body.origin, req.body.base, req.body.height))
         })
 
-    }
+    },
+
+    rectangle1: createR1,
+    rectangle2: createR2
 }
