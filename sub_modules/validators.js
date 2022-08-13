@@ -2,6 +2,7 @@
 const rectangles = require("./rectangles")
 
 function determine() {
+    // to export the determination of interactions between the rectangles
     let outcome = ''
     if (rectangles.r1 == undefined || rectangles.r2 == undefined) {
         outcome = "Please define both rectangles first"

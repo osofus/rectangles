@@ -1,6 +1,7 @@
 // properties of a rectangle
 class Rectangle {
     constructor(origin, base, height) {
+        // convert to co-ordinates
         this.pointA = {
             x: origin.x - base / 2,
             y: origin.y - height / 2
@@ -20,6 +21,7 @@ class Rectangle {
     }
 
     contains(rectangle) {
+        // encapsulates that rectangle
         if (
             this.pointA.x < rectangle.pointA.x &&
             this.pointB.x > rectangle.pointB.x &&
@@ -30,6 +32,7 @@ class Rectangle {
     }
 
     separateFrom(rectangle) {
+        // not touching that rectangle in any manner
         if (
             this.pointA.x > rectangle.pointB.x ||
             rectangle.pointA.x > this.pointB.x ||
@@ -50,8 +53,8 @@ class Rectangle {
             ) {
                 return "sub-line"
             } else if (
-                rectangle.pointA.y < this.pointA.y < rectangle.pointD.y ||
-                this.pointA.y < rectangle.pointA.y < this.pointD.y
+                rectangle.pointA.y < this.pointA.y && this.pointA.y < rectangle.pointD.y ||
+                this.pointA.y < rectangle.pointA.y && rectangle.pointA.y < this.pointD.y
             ) {
                 return "partial"
             } else return ""
@@ -65,8 +68,8 @@ class Rectangle {
             ) {
                 return "sub-line"
             } else if (
-                rectangle.pointA.x < this.pointA.x < rectangle.pointB.x ||
-                this.pointA.x < rectangle.pointA.x < this.pointB.x
+                rectangle.pointA.x < this.pointA.x && this.pointA.x < rectangle.pointB.x ||
+                this.pointA.x < rectangle.pointA.x && rectangle.pointA.x < this.pointB.x
             ) {
                 return "partial"
             } else return ""
@@ -75,12 +78,14 @@ class Rectangle {
 }
 
 function createR1(origin, base, height) {
+    // to export the creation of rectangle 1
     let rectangle = new Rectangle(origin, base, height)
     module.exports.r1 = rectangle
     return rectangle
 }
 
 function createR2(origin, base, height) {
+    // to export the creation of rectangle 2
     let rectangle = new Rectangle(origin, base, height)
     module.exports.r2 = rectangle
     return rectangle
