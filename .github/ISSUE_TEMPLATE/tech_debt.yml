@@ -1,0 +1,66 @@
+name: Tech debt / refactor
+description: Cleanup, refactor, or test-coverage improvement
+labels: ["tech-debt"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Per [AGENTS.md](../AGENTS.md), some paths are **legacy** and should not be refactored unless explicitly requested. Please flag below if this touches them.
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Current state
+      description: What's suboptimal today? Code smell, duplication, missing tests, slow path, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed improvement
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Architecture area
+      options:
+        - pages/
+        - pages_logic/
+        - callbacks/
+        - components/ (components_group, components_id, components_style, components_utility)
+        - application/ (domain logic)
+        - tax_engine/
+        - gurobi_model/ (legacy)
+        - tests/ or tests_js/
+        - assets/ (client JS, CSS)
+        - config / infra / CI
+        - Cross-cutting
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: legacy
+    attributes:
+      label: Legacy-path check
+      options:
+        - label: This touches a path listed under "Legacy Areas" in AGENTS.md (mygoals.py, layout.py, app_layout/, app_callback/, app_components_id/, gurobi_model/, DataIO class, etc.)
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / migration concerns
+      description: Backward-compat for saved plans? Callback signature changes? Test coverage gaps?
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Rough effort
+      options:
+        - XS (<1 hr)
+        - S (half day)
+        - M (1–2 days)
+        - L (3–5 days)
+        - XL (1+ weeks)

@@ -1,0 +1,122 @@
+name: Bug report
+description: Report a crash, error, or incorrect behavior
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. For **incorrect calculation results** (e.g., wrong tax, wrong optimizer output), please use the **Calculation issue** template instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One-sentence description of the bug.
+      placeholder: e.g., Saving a plan with a RESP contribution > $50k raises a 500 error.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Financial domain
+      description: Which domain is affected?
+      options:
+        - RESP
+        - TFSA
+        - RRSP
+        - Non-registered account
+        - Real Estate
+        - Mortgage
+        - CPP
+        - OAS
+        - Child Care Benefit
+        - Life Insurance
+        - Disability Insurance
+        - DB Pension
+        - Tax Engine
+        - Cash Flow
+        - Gurobi Optimizer
+        - Risk / Monte Carlo
+        - Authentication
+        - Data Layer / AWS
+        - Other / Multiple
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Affected page
+      options:
+        - Home
+        - Plans
+        - Settings
+        - Files
+        - Access
+        - Multiple pages
+        - N/A (backend only)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Local dev
+        - dev_staging
+        - Production
+        - All
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps. Include client/plan IDs only if safe to share.
+      placeholder: |
+        1. Log in
+        2. Open plan "Test client"
+        3. Click "Add RESP account"
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include error messages, tracebacks, or console logs if available.
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / OS
+      placeholder: e.g., Chrome 131 on macOS 15
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / logs
+      description: Drag-and-drop supported. Redact PII before attaching.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I have searched existing issues for duplicates.
+          required: true
+        - label: I have redacted any client PII from screenshots/logs.
+          required: true

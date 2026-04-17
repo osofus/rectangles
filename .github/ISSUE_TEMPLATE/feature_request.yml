@@ -1,0 +1,66 @@
+name: Feature request
+description: Propose a new feature or enhancement
+labels: ["feature"]
+body:
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Financial domain
+      options:
+        - RESP
+        - TFSA
+        - RRSP
+        - Non-registered account
+        - Real Estate
+        - Mortgage
+        - CPP
+        - OAS
+        - Child Care Benefit
+        - Life Insurance
+        - Disability Insurance
+        - DB Pension
+        - Tax Engine
+        - Cash Flow
+        - Gurobi Optimizer
+        - Risk / Monte Carlo
+        - Authentication
+        - Cross-cutting / Platform
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / user need
+      description: What can a financial planner not do today, or what takes too long?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] Planner can ...
+        - [ ] Plan persists ...
+        - [ ] Calculation matches ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on existing plans / data
+      description: Migration needed? Backward-compatible? Changes to saved plan shape?

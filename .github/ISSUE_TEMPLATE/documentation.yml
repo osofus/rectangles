@@ -1,0 +1,16 @@
+name: Documentation
+description: Update or add documentation
+labels: ["docs"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to change?
+      description: Describe the doc location (file path, section) and what's missing, outdated, or unclear.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested content / outline

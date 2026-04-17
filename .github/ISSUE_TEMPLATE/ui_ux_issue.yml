@@ -1,0 +1,67 @@
+name: UI / UX issue
+description: Layout, styling, or Dash callback interaction problem
+labels: ["ui-ux"]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Affected page
+      options:
+        - Home
+        - Plans
+        - Settings
+        - Files
+        - Access
+        - Multiple pages
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component_type
+    attributes:
+      label: Component type
+      options:
+        - Layout / styling
+        - Modal / dialog
+        - Form input / validation
+        - Table / AG Grid
+        - Chart / graph
+        - Callback / reactivity
+        - Button loading state
+        - Navigation / routing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / appearance
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / viewport
+      placeholder: e.g., Chrome 131, 1440x900
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / screen recording
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Browser console errors (if any)
+      render: shell
