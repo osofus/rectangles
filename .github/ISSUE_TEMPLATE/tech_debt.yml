@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Per [AGENTS.md](../AGENTS.md), some paths are **legacy** and should not be refactored unless explicitly requested. Please flag below if this touches them.
+        Some paths are **legacy** and should not be refactored unless explicitly requested. Please flag below if this touches them.
 
   - type: textarea
     id: current_state
@@ -46,7 +46,7 @@ body:
     attributes:
       label: Legacy-path check
       options:
-        - label: This touches a path listed under "Legacy Areas" in AGENTS.md (mygoals.py, layout.py, app_layout/, app_callback/, app_components_id/, gurobi_model/, DataIO class, etc.)
+        - label: This touches a legacy area (mygoals.py, layout.py, app_layout/, app_callback/, app_components_id/, gurobi_model/, DataIO class, etc.)
 
   - type: textarea
     id: risks

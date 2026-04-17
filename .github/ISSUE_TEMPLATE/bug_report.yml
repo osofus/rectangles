@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for filing a bug. For **incorrect calculation results** (e.g., wrong tax, wrong optimizer output), please use the **Calculation issue** template instead.
+        For **incorrect calculation results** (e.g., wrong tax, wrong optimizer output), please use the **Calculation issue** template instead.
 
   - type: textarea
     id: summary
@@ -65,7 +65,7 @@ body:
       label: Environment
       options:
         - Local dev
-        - dev_staging
+        - Development
         - Production
         - All
     validations:
@@ -109,7 +109,7 @@ body:
     id: screenshots
     attributes:
       label: Screenshots / logs
-      description: Drag-and-drop supported. Redact PII before attaching.
+      description: Drag-and-drop supported. Redact Personally Identifiable Information (PII) before attaching.
 
   - type: checkboxes
     id: confirm

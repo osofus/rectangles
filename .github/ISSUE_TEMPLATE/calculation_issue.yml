@@ -62,8 +62,6 @@ body:
       label: Authoritative reference
       description: CRA form, tax act section, academic source, or existing test case that defines the correct answer.
       placeholder: e.g., CRA T1 line 12900; CESG rules at Canada.ca/RESP
-    validations:
-      required: true
 
   - type: dropdown
     id: optimizer_involved
